@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+void inser(int ar[], int id);
+
+int main (){
+	
+	setlocale(LC_ALL,"Portuguese_Brazil");
+	int id, ar[10],aux;
+	
+	id=10;
+	puts("Digite as idades\n");
+	for(int i=0; i<id; i++){
+	scanf("%d",&ar[i]);
+}
+
+	system("cls");
+	inser(ar , id);
+	puts("As idades em ordem decrescente são:\n");
+	for (int j=id-1; j>=0;j--){	
+	printf("%d\t", ar[j]);
+	}
+	return 0;
+}
+
+void inser (int ar[], int id){
+	
+	int aux;
+	
+	for(int i=1; i<id; i++){
+		
+		aux = ar [i];
+		int j = i-1;
+		
+		
+		while (aux<ar[j] && j>=0){
+			
+			ar [j+1]= ar[j];
+			j--;
+		}
+		ar [j+1]=aux;
+	}
+}
+
